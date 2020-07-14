@@ -1,0 +1,13 @@
+{# Mensagens flash de sucesso #}
+
+{# Se a mensagem existir no array mensagens_sucesso apresenta o botão sucesso, 
+	se não o botão danger #}
+{% for message in get_flashed_messages() %}
+	{% if 'sucesso' in message or 'Sucesso' in message %}
+		{# Botão sucesso #}
+		<button type="button" class="btn btn-success btn-lg btn-block" id="buttonSuccessFlash">{{ message }}</button>
+	{% else %}
+		{# Botão danger #}
+		<button type="button" class="btn btn-danger btn-lg btn-block" id="buttonErrorFlash">{{ message }}</button>
+	{% endif %}
+{% endfor %}

@@ -1,0 +1,804 @@
+/*====================================================
+	1. PRIMARY STYLES
+	2. BUTTON, GRADIENTS
+		BUTTON COMMON
+		BUTTON WITH BORDER 
+		BUTTON WITH BACKGROUND
+		BUTTON WITH UNDELINE
+		SITE NAVIGATION
+		GRADIENT ICON
+	3. MENU
+		LOGO
+		MAIN AREA
+		NAV ICON
+	4. HEADER
+		SCROLL DOWN BTN
+	5. SOCIAL SECTION
+	6. TEXT AREA
+	7. ABOUT AREA
+	8. COUNTER SECTION
+	9. COUNTER SECTION
+	10. FOOTER
+	11. ICON BOX STYLING
+	12. COLLAPSE
+	13. RESPONSIVE
+====================================================
+
+/* ---------------------------------
+1. PRIMARY STYLES
+--------------------------------- */
+/* poppins-regular - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins'),
+       url('../fonts/poppins/poppins.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/poppins/poppins.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/poppins/poppins.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/poppins/poppins.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/poppins/poppins.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+
+html{ font-size: 100%; height: 100%; overflow-x: hidden;margin: 0px;  padding: 0px; touch-action: manipulation; }
+
+
+body{ font-size: 16px; font-family: 'Poppins', serif; width: 100%; height: 100%; margin: 0; font-weight: 400;
+	-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; word-wrap: break-word; 
+	color: #333; }
+
+h1, h2, h3, h4, h5, h6, p, a, ul, span, li, img, inpot, button{ margin: 0; padding: 0; }
+
+h1,h2,h3,h4,h5,h6{ line-height: 1.3; font-weight: inherit; }
+
+h1,h2,h3{ font-family: 'Poppins'}
+
+p{ line-height: 1.6; font-size: 1.05em; font-weight: 400; color: #777; }
+
+h1{ font-size: 5em; line-height: 1; }
+h2{ font-size: 3.5em; line-height: 1.1; }
+h3{ font-size: 2.5em; }
+h4{ font-size: 2em; }
+h5{ font-size: 1.2em; }
+h6{ font-size: .9em; letter-spacing: 1px; }
+
+a, button{ display: inline-block; text-decoration: none; color: inherit; line-height: 1; transition: all .25s ease-in-out; }
+
+a:focus, a:active, a:hover,
+button:focus, button:active, button:hover,
+a b.light-color:hover{ text-decoration: none;}
+
+b{ font-weight: 600; }
+
+img{ width: 100%; }
+
+li{ list-style: none; display: inline-block; }
+
+span{ display: inline-block; }
+
+button{ outline: 0; border: 0; background: none; cursor: pointer; }
+
+.icon{ font-size: 1.1em; display: inline-block; line-height: inherit; }
+
+[class^="icon-"]:before, [class*=" icon-"]:before{ line-height: inherit; }
+
+b.max-bold{ font-weight: 700; }
+
+.justify{ text-align:justify; }
+
+
+/* ---------------------------------
+2. COMMONS FOR PAGE DESIGN
+--------------------------------- */
+
+.section{ padding-top: 80px; padding-bottom: 50px; }
+
+.section .heading-area{ margin-bottom: 50px; }
+
+.left-area{ float: left; }
+
+.right-area{ float: right; }
+
+.font-red{ color: #ed312f; }
+.font-white{ color: #FFFFFF; }
+.font-black{ color: #000; }
+.font-white:link{ color: #FFFFFF; }
+
+.margin-tb-10{ margin-top: 10px; margin-bottom: 10px; }
+.margin-tb-20{ margin-top: 20px; margin-bottom: 20px; }
+.margin-tb-30{ margin-top: 30px; margin-bottom: 30px; }
+
+.margin-b-10{ margin-bottom: 10px; }
+.margin-b-20{ margin-bottom: 20px; }
+.margin-b-30{ margin-bottom: 30px; }
+.margin-b-50{ margin-bottom: 50px; }
+.margin-b-80{ margin-bottom: 80px; }
+.margin-t-5{ margin-top: 5px; }
+
+.margin-lr-10{ margin-left: 10px; margin-right: 10px; }
+
+.padding-lr-0{ padding-left: 0; padding-right: 0; }
+
+.position-relative{ position: relative; }
+
+.center-text{ text-align: center; } 
+
+.overflow-hidden{ overflow: hidden; }
+
+
+.display-table{ display: table; height: 100%; width: 100%; }
+
+.display-table-cell{ display: table-cell; vertical-align: middle; }
+
+
+::-webkit-input-placeholder { font-size: .9em; letter-spacing: 1px; }
+
+::-moz-placeholder { font-size: .9em; letter-spacing: 1px; }
+
+:-ms-input-placeholder { font-size: .9em; letter-spacing: 1px; }
+
+:-moz-placeholder { font-size: .9em; letter-spacing: 1px; }
+
+/* BUTTON COMMON */
+
+.btn{ font-size: .9em; padding: 13px 30px; letter-spacing: 2px; border-radius: 0px; 
+	position: relative; overflow: hidden; z-index: 1; }
+
+.btn i{ margin-left: 5px; }
+
+.btn i:last-child{ margin-left: -1px; transition: all .1s; opacity: .5; }
+
+.btn:hover i:last-child{ opacity: 1; }
+
+/* BUTTON WITH BORDER */
+
+.btn-border{ border: 2px solid #000; 
+	border-image: linear-gradient(to right, #d42c2a 0%, #ed3101); border-image-slice: 1; }
+
+.btn-border:after{ content: ''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: -1; 
+	opacity: 0; transition: inherit; background: linear-gradient(15deg, #d42c2a 0%, #ed3101 100%); }
+
+.btn-border:hover{ color: #fff; }
+
+.btn-border:hover:after{ opacity: 1; }
+
+.btn-reverse{ border: 2px solid #000; 
+	border-color: white; border-image-slice: 1; }
+
+.btn-reverse:after{ content: ''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: -1; 
+	opacity: 0; transition: inherit; background: linear-gradient(15deg, #d42c2a 0%, #ed3101 100%); }
+
+.btn-reverse:hover{ color: #fff; }
+
+.btn-reverse:hover:after{ opacity: 1; }
+
+/* BUTTON WITH BACKGROUND */
+
+.btn-fill{ border: 2px solid #ff6a00; color: #fff;
+	border-image: linear-gradient(to right, #d42c2a 0%, #ed3101); border-image-slice: 1; }
+
+.btn-fill:after{ content: ''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: -1; 
+	opacity: 1; transition: inherit; background: linear-gradient(15deg, #d42c2a 0%, #ed3101 100%); }
+
+.btn-fill:hover{ color: #000; }
+
+.btn-fill:hover:after{ opacity: 0; }
+
+/* BUTTON RED */
+#btn-color{
+	color: white;
+	font-color: white;}
+
+#btn-color:hover{
+	color: black;
+	font-color: black;}
+
+.btn-red{ border: 2px solid rgb(237, 49, 1); color: #fff;
+	border-image: rgb(237, 49, 1); border-image-slice: 1; }
+
+.btn-red:after{ content: ''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: -1; 
+	opacity: 1; transition: inherit; background: rgb(237, 49, 1); }
+
+.btn-red:hover{ color: #000; }
+
+.btn-red:hover:after{ opacity: 0; }
+
+/* BUTTON BLUE */
+
+.btn-blue{ border: 2px solid rgb(0, 123, 255); color: #fff;
+	border-image: rgb(0, 123, 255); border-image-slice: 1; }
+
+.btn-blue:after{ content: ''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: -1; 
+	opacity: 1; transition: inherit; background: rgb(0, 123, 255); }
+
+.btn-blue:hover{ color: #000; }
+
+.btn-blue:hover:after{ opacity: 0; }
+
+/* BUTTON SAVE */
+
+.btn-save, .btn-save:visited, .btn-save:link, .btn-save:hover{
+	width:100%;
+	font-size: 1em;
+	color: white;}
+
+/* BUTTON REMOVE */
+
+.btn-remove, .btn-remove:link, .btn-remove:visited, .btn-remove:hover{
+	width:100%;
+	font-size: 1em;
+	color: white;}
+
+.td-remove{
+	background-color: #d60000;
+	color: white;
+
+/* SITE NAVIGATION */
+}
+.site-navigation{ position: fixed; top: 50%; right: 20px; z-index: 100;
+	transform: translateY(-50%); }
+
+.site-navigation > li{ display: block; height: 30px; text-align: center; color: #aaa; }
+
+.site-navigation > li > a{ width: 30px; height: 30px; border-radius: 20px; position: relative;
+	border: 1px solid transparent; }
+
+.site-navigation > li > a:after{ content:''; display: block; margin: 11px auto; height: 7px; width: 7px; 
+	border-radius: 10px; background: #888; }
+
+.site-navigation > li:first-child > a,
+.site-navigation > li:last-child > a{ padding: 0; border: 0; line-height: 30px; }
+
+.site-navigation > li:first-child > a:after,
+.site-navigation > li:last-child > a:after{ background: none; width: auto; height: auto; }
+
+.site-navigation > li > a > .tool-tip{ position: absolute; right: 0; padding: 5px 15px; 
+	opacity: 0; transition: right .2s, opacity .2s; transform: scale(0); color: #aaa; }
+
+.site-navigation > li > a.active,
+.site-navigation > li > a:hover{ border-color: #aaa; }
+
+.site-navigation > li > a:hover:after{ background: #bbb; }
+
+.site-navigation > li > a:hover > .tool-tip{ opacity: 1; right: 100%; transform: scale(1); }
+
+
+/* ---------------------------------
+3. MENU
+--------------------------------- */
+
+header{ position: absolute; left: 0; right: 0; top: 20px; z-index: 1000; font-size: .95em; font-weight: 500; color: #fff; }
+	
+/* LOGO */
+
+header .logo img{ height: 70px; width: auto; }
+
+/* MAIN AREA */
+
+header .main-menu{ float: right; margin: 0px -15px; }
+
+header .main-menu > li > a{ height: 50px; line-height: 46px; padding: 0 5px; margin: 0 10px; position: relative;
+	overflow: hidden; }
+
+header .main-menu > li > a:after{ content: ''; position: absolute; bottom: 10px; left: 0; right: 0; height: 2px; 
+	transform: translateX(-100%); opacity: 0; background: #fff; }
+
+header .visible.main-menu{ display: block; }
+
+header .main-menu > li > a:hover{ color: #eee; }
+
+header .main-menu > li > a:hover:after{ transform: translateX(0%); opacity: 1; }
+
+/* NAV ICON */
+
+.menu-nav-icon{ display: none; height: 60px; width: 50px; text-align: center; line-height: 60px; cursor: pointer; 
+	font-size: 2em; }
+	
+/* ---------------------------------
+4. HEADER
+--------------------------------- */
+
+.main-slider{ height: calc(100%); position: relative; z-index: 10; background-size: cover; color: #fff; } 
+
+.main-slider:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; opacity: .7;
+	z-index: -1;}
+
+#parallax { background-color: #ed312f; margin: auto; overflow: hidden; position: relative;}
+
+#parallax-mobile{ display: none;}
+
+.main-subpages{ height: calc(70%); position: relative; z-index: 10; background-size: cover; color: #fff; } 
+
+.main-subpages:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; opacity: .7;
+	z-index: -1; background: linear-gradient(15deg, #d42c2a 0%, #ed3101 100%); }
+
+.main-profile{ height: calc(70%); position: relative; z-index: 10; background-size: cover; color: #fff; } 
+
+.main-profile:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; opacity: .9;
+	z-index: -1; background: linear-gradient(15deg, #d42c2a 0%, #ed3101 100%); }
+
+.main-user{ height: calc(10%); position: relative; z-index: 10; background-size: cover; color: #fff; } 
+
+.main-user:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; opacity: .9;
+	z-index: -1; background: linear-gradient(15deg, #d42c2a 0%, #ed3101 100%); }
+
+.slider-content .title-header{ font-size: 10em; letter-spacing: 4px; font-family: Allura; }
+
+.slider-content .hand-writing{ margin-top: -10px; font-size: 6em; letter-spacing: 4px; font-family: Allura; }
+
+.slider-content .pre-heading{ margin-bottom: 10px; letter-spacing: 1px; }
+
+.slider-content .slider-btn{ margin-top: 30px; border-color: #fff; color: #fff; }
+
+.slider-content .slider-btn:hover{ background: #fff; color: #222; }
+
+/* SCROLL DOWN BTN */
+
+.scroll-down-btn{ padding: 0; position: absolute; bottom: 20px; right: 20px; font-size: .8em;
+	transform: rotate(90deg) translateX(-50%); color: #fff; }
+
+.scroll-down-btn:hover{ color: #ddd; }
+
+.scroll-down-btn i{ margin-left: 5px; }
+
+.scroll-down-btn i:last-child{ margin-left: -1px; transition: all .1s; opacity: .5; }
+
+.scroll-down-btn:hover i:last-child{ opacity: 1; }
+
+/* ---------------------------------
+5. SOCIAL SECTION
+--------------------------------- */
+
+.social-section{ padding: 40px 0; background-color: #ed312f; color: #fff; }
+
+.social-section ul > li:first-child{ position: relative; padding-right: 270px; margin-right: 10px; }
+
+.social-section ul > li:first-child:after{ content: ''; width: 250px; position: absolute; top: 50%; 
+	right: 0; height: 2px; margin-top: -1px; background-color: white;  }
+
+.social-section ul > li > a{ padding: 0 10px; }
+
+.social-section ul > li > a:hover{ color:black; }
+
+/* ---------------------------------
+6. TEXT AREA
+--------------------------------- */
+
+.text-section{ overflow: hidden; position: relative; background-color: #000; height: 60%; }
+
+.text-section .intro{ width: 100%; color: white; font-size: 1.3em; }
+
+.text-section .subtitle { color: white;}
+
+.layer {
+	background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------------------------------
+7. ABOUT AREA
+--------------------------------- */
+
+.about-section{ overflow: hidden; position: relative; background: #fff; }
+
+.about-section .image-wrapper{ width: 30%;position: absolute; 
+	top: 0; bottom: 0; left: 0; text-align: right; }
+
+.about-section .image-wrapper img{  max-width: 300px; }
+
+.about-section .about{ width: 70%; margin-left: 30%; padding-left: 60px; }
+
+.about-section p {font-size: 1.5em;}
+
+.about-section .about-saved{width: 80%; margin-left: 10%; margin-right: 10%;}
+/* ---------------------------------
+8. COUNTER SECTION
+--------------------------------- */
+
+.counter-section{ background: #000; color: #fff; }
+
+/* ---------------------------------
+9. INFO SECTION
+--------------------------------- */
+
+.info-section{ background: #ed312f; color: #fff; border-top: 1px solid; border-color: white;}
+
+.info-img{max-width: 60%; margin-top:10%;}
+
+/* ---------------------------------
+10. FOOTER
+--------------------------------- */
+
+footer{ padding: 40px 15px 20px; background: #ed312f; color: #fff; }
+
+footer .logo img{ height: 150px; width: auto; }
+
+footer .footer-section{ padding-left: 20px; }
+
+footer .footer-section .title{ position: relative; }
+
+footer .footer-section .title:after{ content:''; position: absolute; top: 5px; left: -20px; height: 12px; 
+	width: 12px; border-radius: 12px; background:  linear-gradient(15deg, #d42c2a 0%, #ed3101 100%); }
+
+}
+/* ---------------------------------
+11. ICON BOX STYLING
+--------------------------------- */
+.icnbox:after, footer .footer-section .title:after {
+    content: '';
+    background: linear-gradient(15deg, #185a9d 0, #43cea2 100%)
+}
+
+.icnbox{ padding: 80px 40px 60px; position: relative; border: 2px solid #ff6a00;
+	border-image: linear-gradient(to right, #d42c2a 0%, #ed3101); border-image-slice: 1; }
+
+.icnbox:after{ content:''; position:absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: -1; 
+	transition: all .25s ease-in; opacity: 0; background: linear-gradient(15deg, #d42c2a 0%, #ed3101 100%); }
+
+.icnbox.deactivate {color:black;}
+
+.icnbox.deactivate:after{ background: #fff; color: black; opacity: 1; }
+
+.icnbox.deactivate .icon,
+.icnbox:hover .icon{ color: black; }
+
+.icnbox.active,
+.icnbox.active .desc,
+.icnbox:hover,
+.icnbox:hover .desc{ color: #fff; }
+
+.icnbox.active:after,
+.icnbox:hover:after{ opacity: 1; }
+
+.icnbox.active .icon,
+.icnbox:hover .icon{ filter: brightness(0) invert(1); }
+
+/* ---------------------------------
+12. COLLAPSE
+--------------------------------- */
+.collapse-style{
+	margin-top: 10px;}
+
+.card{
+	background-color: white;
+	border: 1px solid rgb(237, 49, 1);
+	border-radius: .25rem;
+	margin-top: 10px;}
+
+.card-header{
+	background-color: white;
+	border-bottom-color: white;
+	border-radius: .25rem;}
+
+.card-header:hover{
+	background-color: rgb(237, 49, 1);
+	color:white;}
+
+.card-header[aria-expanded="true"], .card-header[aria-expanded="true"] a:after{
+	background-color: rgb(237, 49, 1);
+	color:white;
+	content: "\f107";
+}
+
+.btn-link {
+	font-size: 0.9em;
+	font-weight: bold;
+	text-decoration: none;
+	color:black;
+    background-color: transparent;}
+
+.accordion-toggle:after {
+    font-family: 'FontAwesome';
+    content: "\f105";    
+    float: right;}
+
+#card-body{
+	font-size: 1em;
+	color: black;}
+
+.btn-filter {
+	font-size: 0.9em;
+	font-weight: bold;
+	text-decoration: none;
+	color:black;
+    background-color: transparent;}
+
+.qtt-places p{
+	color: black;
+	font-size: 1em;
+}
+
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #ed3101;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #000; 
+	border-color: black; 
+    background: #fff;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.input-index input{
+	border: 1px solid; 
+	border-color: rgb(237, 49, 1);
+}
+.input-index input:focus{
+	background-color: #F5F5F5;
+}
+.input-index input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+
+.input-index input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+}
+
+.input-index input::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+}
+/* --------------------------------------
+13. RESPONSIVE
+-----------------------------------------*/
+/* Screens Resolution : + than 2160 == 4K
+-------------------------------------------------------------------------- */
+@media only screen and (min-width: 2159px) {
+
+	/* ---------------------------------
+	1. HEADER - PARALLAX
+	--------------------------------- */
+
+	#parallax{height: 100%;}
+
+}
+
+/* Screens Resolution : 1200ppx
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 1200px) {
+
+	/* ---------------------------------
+	1. HEADER - PARALLAX
+	--------------------------------- */
+
+	#parallax{display:none;}
+
+	#parallax-mobile{ display: block; height: 100%; height:100%; }
+	
+
+
+}
+
+/* Screens Resolution : 992px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 992px) {
+	
+	/* ---------------------------------
+	1. PRIMARY STYLES
+	--------------------------------- */
+
+	h1{ font-size: 4em; }
+	h2{ font-size: 3em; }
+	h3{ font-size: 2em; }
+		
+	/* ---------------------------------
+	2. INTRO AREA
+	--------------------------------- */
+	
+	.text-section .image-wrapper{ position: relative; width: 100%; height: 300px; font-size: 1em; }
+	
+	.text-section .intro{ margin: 0; width: 100%; padding-left: 0px; }
+		
+	/* ---------------------------------
+	3. ABOUT AREA
+	--------------------------------- */
+	
+	.about-section .image-wrapper{ display: none; }
+	
+	.about-section .about{ margin: 0; width: 100%; padding-left: 0px; }
+	
+}
+
+/* Screens Resolution : 767px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+	
+	/* ---------------------------------
+	1. PRIMARY STYLES
+	--------------------------------- */
+
+	p{ line-height: 1.4; }
+
+	h1{ font-size: 3em; }
+	h2{ font-size: 2.5em; }
+	h3{ font-size: 1.8em; }
+	h4{ font-size: 1.5em; }
+	h5{ font-size: 1.2em; }
+
+	.justify{ text-align: initial; }
+	
+	/* ---------------------------------
+	2. BUTTON, GRADIENTS
+	--------------------------------- */
+
+	.section{ padding: 50px 0 20px; }
+
+	.section .heading-area{ margin-bottom: 30px; }
+
+	.btn{ padding: 10px 20px; }
+	
+	.btn-fill{ padding: 10px; } 
+		
+	/* SITE NAVIGATION */
+
+	.site-navigation{ display: none; }
+	
+	/* ---------------------------------
+	3. MENU
+	--------------------------------- */
+	
+	header{ top: 0; border-bottom: 1px solid rgba(255,255,255, .1); }
+	
+	header .logo img{ margin: 12px 0; height: 36px; }
+		
+	/* BOTTOM AREA */
+	
+	header .main-menu{ text-align: left; display: none; float: none; clear: both; max-height: 400px;
+		overflow: auto; border-top: 1px solid #ccc; background: rgba(237, 49, 47, 0.9); }
+	
+	header .main-menu > li{ display: block; float: none; border-bottom: 1px solid #fff; }
+	
+	header .main-menu > li:last-child{ border-bottom: 0; }
+	
+	header .main-menu li > a{ display: block; border: 0; line-height: 1; height: auto; padding: 15px; background: none; }
+	
+	.slider-content .title-header{ font-size: 5em; letter-spacing: 4px; font-family: Allura; }
+
+	/* NAV ICON */
+	
+	.menu-nav-icon{ display: inline-block; float: right; }
+	
+	/* HOVER */
+		
+	header .main-menu > li > a:hover:after{ transform: translateX(0%); opacity: 0; }
+	
+	/* ---------------------------------
+	4. SLIDER
+	--------------------------------- */
+	
+	/* SCROLL DOWN BTN */
+
+	.scroll-down-btn{ display: none; }
+
+	/* ---------------------------------
+	5. HEADER - PARALLAX
+	--------------------------------- */
+
+	#parallax{display:none;}
+	#parallax-mobile{ display: block; height: 100vh;	}
+
+	/* ---------------------------------
+	6. SOCIAL SECTION
+	--------------------------------- */
+
+	.social-section ul > li:first-child{ display: block; padding: 0px 0 12px; margin: 0 0 10px; }
+
+	.social-section ul > li:first-child:after{ width: 100%; bottom: 0; left: 0; top: auto; }
+	
+	.social-section ul > li > a{ padding: 0; padding-right: 15px; }
+		
+	/* ---------------------------------
+	7. User info
+	--------------------------------- */
+
+	.main-profile{
+		height: calc(90%)
+	}
+	.main-profile h2{
+		font-size:2em;
+		margin-top: 20%;
+	}
+	.main-profile h4{
+		position: left;
+		font-size: 1.5em;
+	}
+
+	/* ---------------------------------
+	8. COLLAPSE
+	--------------------------------- */
+	.collapse-style{
+		padding-top: 3px;
+	}
+	.btn-link {
+		padding-left: 0px;
+		padding-right: 0px;
+		font-size: 0.65em;
+		font-weight: bold;
+		text-decoration: none;
+		color:black;
+	    background-color: transparent;
+	}
+	/* ---------------------------------
+	9. TEXT SECTION
+	--------------------------------- */
+	.text-section .intro{ width: 100%; margin-top: 10%; margin-bottom: 10%; color: white; font-size: 1em; }
+
+	/* ---------------------------------
+	10. INFO SECTION
+	--------------------------------- */	
+
+	.info-img{max-width: 30%; margin-top:10%;}
+
+	/* ---------------------------------
+	11. FOOTER
+	--------------------------------- */
+
+	footer{ padding: 50px 0px 10px; }	
+}
+
+/* Screens Resolution : 575px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 575px) {
+	
+	/* ---------------------------------
+	1. PRIMARY STYLES
+	--------------------------------- */
+
+	body{ font-size: 14px;  }
+		
+	/* ---------------------------------
+	2. COUNTER SECTION
+	--------------------------------- */
+	.counter-section{ text-align: center; }
+	
+}
+/* Screens Resolution : 479px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 479px) {
+
+}
+
+/* Screens Resolution : 359px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 359px) {	
+	
+}
+
+/* Screens Resolution : 290px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 290px) {	
+	
+}

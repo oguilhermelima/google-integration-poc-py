@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="bzs">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+        {# Inclue o CSS #}
+        {% include "template/css.html" %}
+    </head>
+    <body >
+        
+        {% include "template/flash.html" %}
+        <div id="flash"></div>
+        <header>
+            <div class="container">
+                <h2 style="color:#333; margin-top: 50px; font-weight: 900">{{ title }}</h2>
+            </div>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        {% block content %}
+        {% endblock content %}
+
+        <!-- {# Footer #}
+        <footer>
+        </footer> -->
+
+        {# JS #}
+        <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    </body>
+</html>

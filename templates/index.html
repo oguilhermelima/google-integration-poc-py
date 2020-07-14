@@ -1,0 +1,82 @@
+{% extends "template.html" %}
+{% block content %}
+<script type="text/javascript">
+    function uploadButton() {
+        var driveFiles = document.getElementById("driveFiles").files;
+        if (driveFiles.length > 0)
+            document.getElementById("uploadButton").disabled = false;
+        else
+            document.getElementById("uploadButton").disabled = true;
+    }
+    function showButton() {
+        var publicationInput = document.getElementById("publicationName").value;
+        if (publicationInput.length > 0)
+            document.getElementById("selectFiles").disabled = false;
+        else
+            document.getElementById("selectFiles").disabled = true;
+    }
+    function getFile() {
+         document.getElementById("driveFiles").click();
+    }
+</script>
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3">
+              <a class="icnbox margin-b-50" href="{{ url_for('authorize') }}">
+                <h5 class="margin-tb-20"><b>Autenticar o usuário</b></h5>
+              </a>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3">
+              <a class="icnbox margin-b-50" href="{{ url_for('token') }}" target="_blank">
+                <h5 class="margin-tb-20"><b>Informações do token</b></h5>
+              </a>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3">
+              <a class="icnbox  margin-b-50" href="{{ url_for('clear_credentials') }}">
+                <h5 class="margin-tb-20"><b>Limpar cache do navegador</b></h5>
+              </a>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3">
+              <a class="icnbox margin-b-50" href="{{ url_for('revoke') }}">
+                <h5 class="margin-tb-20"><b>Desautenticar usuário</b></h5>
+              </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container">
+            <h2 style="color:#333; margin-top: 50px; font-weight: 900;">Google Drive</h2>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 col-md-5 col-lg-5">
+                <a class="icnbox deactivate margin-b-50">
+                    <h5 class="margin-tb-20"><b>Upload de arquivo</b></h5>
+                    <div class="btn-group-vertical input-index">
+                        <input type="text" style="margin-bottom:2px;word-break: break-word;" id="publicationName" class="form-control"
+                               placeholder="Nome da pasta que será criada com os arquivos"
+                               title="Nome da pasta que será criada com os arquivos" oninput="showButton()" required>
+                        <button type="button" class="btn btn-fill" id="selectFiles" onclick="getFile()" disabled>Selecionar arquivos</button>
+                        <input type="file" style="display:None;" id="driveFiles" multiple size="50" onchange="uploadButton()">
+                        <button type="button" style="margin-top:2px;" class="btn btn-fill" id="uploadButton" onclick="uploadFiles()" disabled>Upload</button>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3">
+              <a class="icnbox margin-b-50" href="{{ url_for('files') }}" target="_blank">
+                <h5 class="margin-tb-20"><b>Listar os arquivos</b></h5>
+              </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/googleUpload.js') }}"></script>
+
+{% endblock content %}

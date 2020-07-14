@@ -1,0 +1,6 @@
+gunicorn==19.8.1
+flask
+google-api-python-client
+google-auth
+google-auth-oauthlib
+google-auth-httplib2

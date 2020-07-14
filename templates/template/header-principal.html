@@ -1,0 +1,8 @@
+{# DIV COM AS IMAGENS DO EFEITO PARALLAX #}
+<div id="parallax">
+  {# IMAGEM DE FUNDO #}
+  <img src="{{ url_for('static', filename='imgs/background.png') }}">
+</div>  
+
+{# REMOVE PARALLAX NOS MOBILES #}
+<div class="main-slider" id="parallax-mobile" style="background-image:url({{ url_for('static', filename='imgs/background-mobile.png') }});"></div>
