@@ -6,9 +6,12 @@ function getCookie(name) {
 }
 
 function uploadFiles() {
+    // CODE
     var files = Array.from(document.getElementById("driveFiles").files);
     var accessToken = getCookie("token");
     var publicationName = document.getElementById("publicationName").value;
+
+    
     var publicationResponse = createPublicationFolder(accessToken, publicationName);
     var publicationFolder = JSON.parse(publicationResponse);
 
@@ -16,6 +19,10 @@ function uploadFiles() {
      var fileResponse = uploadPublicationFiles(accessToken, file, publicationFolder);
      return JSON.parse(fileResponse);
     });
+
+    // CODE
+
+
     console.log(publicationFolder);
 
     // Python thing - remove
@@ -48,7 +55,7 @@ function uploadPublicationFiles(accessToken, file, parent) {
     var metadata = {
         'name': file.name,
         'mimeType': file.type, 
-        'parents': [parent.id], // Receive the id of parent folder
+        'parents': ["1-KVQhIqKw9lSu08ELFvR1IlBaBfO9Su3"], // Receive the id of parent folder
     };
     var body = new FormData();
     body.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json; charset=UTF-8'}));
